@@ -1,9 +1,7 @@
 import static jdk.nashorn.internal.objects.NativeRegExp.compile
 
 apply plugin: 'java'
-apply plugin: 'application'
 
-mainClassName = "com.luxoft.sqa.HelloWorld"
 repositories{
     mavenCentral()
 }
