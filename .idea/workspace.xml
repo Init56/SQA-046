@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae6a92ef-c61e-43ff-a4f9-9674de53f66d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/AddC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/DellC.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/TestBase.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/Application.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/ContactHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/EditC.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/SessionHelper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/Application.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/ContactHelper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/SessionHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/AddC.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/AddC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/DellC.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/DellC.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/TestBase.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/TestBase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/AddC.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/AddC.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/DellC.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/DellC.java" />
