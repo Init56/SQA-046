@@ -1,4 +1,4 @@
-package com.luxoft.sqa.webtests;
+package com.luxoft.sqa.webtests.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ public class ContactHelper {
         this.driver = driver;
     }
 
-    protected void fillForm(String firstname, String middlename) {
+    public void fillForm(String firstname, String middlename) {
         driver.findElement(By.linkText("add new")).click();
         driver.findElement(By.name("firstname")).clear();
         driver.findElement(By.name("firstname")).sendKeys(firstname);
@@ -21,23 +21,23 @@ public class ContactHelper {
 
     }
 
-    protected void submitCreation() {
+    public void submitCreation() {
 
         driver.findElement(By.name("submit")).click();
     }
 
-    protected void dell() {
+    public void dell() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.cssSelector("input[type=\"Button\"]")).click();
         driver.switchTo().alert().accept();
     }
 
-    protected void edit() {
+    public void edit() {
         driver.findElement(By.name("selected[]")).click();
         driver.findElement(By.linkText("Edit")).click();
     }
 
-    protected void stop() {
+    public void stop() {
         driver.quit();
     }
 

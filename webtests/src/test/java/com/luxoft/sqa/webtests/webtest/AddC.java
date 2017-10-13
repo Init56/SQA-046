@@ -1,9 +1,9 @@
-package com.luxoft.sqa.webtests;
+package com.luxoft.sqa.webtests.webtest;
 
         import org.testng.annotations.Test;
 
 
-public class AddC extends TestBase{
+public class AddC extends TestBase {
 
     @Test
     public void testGroupCreation() {

@@ -1,4 +1,4 @@
-package com.luxoft.sqa.webtests;
+package com.luxoft.sqa.webtests.fw;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -8,7 +8,7 @@ public class Application {
     private final SessionHelper sessionHelper = new SessionHelper();
     ContactHelper contactHelper;
 
-    protected void init() {
+    public void init() {
         System.setProperty("webdriver.chrome.driver", "lib/drivers/chromedriver.exe");
         sessionHelper.driver = new ChromeDriver();
         sessionHelper.driver.manage().window().maximize();

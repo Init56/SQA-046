@@ -1,4 +1,4 @@
-package com.luxoft.sqa.webtests;
+package com.luxoft.sqa.webtests.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
