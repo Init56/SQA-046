@@ -7,9 +7,10 @@ public class AddC extends TestBase{
 
     @Test
     public void testGroupCreation() {
-        fillForm("Ivan", "Ivanov");
-        submitCreation();
-        tearDown();
+        app.getContactHelper().fillForm("Ivan", "Ivanov");
+        app.getContactHelper().submitCreation();
+        app.getSessionHelper().logout();
+        //tearDown();
     }
 
 

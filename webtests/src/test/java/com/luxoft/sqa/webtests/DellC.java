@@ -9,7 +9,7 @@ public class DellC extends TestBase{
 
     @Test
     public void contactDell() {
-        dell();
+        app.getContactHelper().dell();
         tearDown();
     }
 
