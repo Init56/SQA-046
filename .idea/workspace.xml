@@ -2,14 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae6a92ef-c61e-43ff-a4f9-9674de53f66d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/Application.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/ContactHelper.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/ContactHelper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/SessionHelper.class" afterPath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/SessionHelper.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/Application.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/BaseHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/ContactHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/fw/SessionHelper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/webtest/AddC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/webtest/DellC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/webtest/EditC.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/out/test/classes/com/luxoft/sqa/webtests/webtest/TestBase.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/BaseHelper.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/Application.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/ContactHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/SessionHelper.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/DellC.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/DellC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/EditC.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/EditC.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/TestBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java" afterPath="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java" />
     </list>
     <ignored path="$PROJECT_DIR$/sandbox/.gradle/" />
     <ignored path="$PROJECT_DIR$/sandbox/build/" />
@@ -41,51 +50,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/build.gradle">
+      <file leaf-file-name="GroupModificationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupModificationTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding />
+              <caret line="11" column="85" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="85" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="AddC.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DellC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/DellC.java">
+      <file leaf-file-name="GroupDeletionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupDeletionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="EditC.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/EditC.java">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/EditC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="221">
+              <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,65 +98,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java">
+      <file leaf-file-name="GroupCreationTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupCreationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="153">
+              <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#805#806#0" expanded="true" />
-                <element signature="e#841#842#0" expanded="true" />
-                <element signature="e#888#889#0" expanded="true" />
-                <element signature="e#924#925#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SessionHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#197#198#0" expanded="true" />
-                <element signature="e#226#227#0" expanded="true" />
-                <element signature="e#721#722#0" expanded="true" />
-                <element signature="e#778#779#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ContactHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/ContactHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="648">
+              <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#237#238#0" expanded="true" />
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#1016#1017#0" expanded="true" />
-                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#308#309#0" expanded="true" />
+                <element signature="e#337#338#0" expanded="true" />
+                <element signature="e#1293#1294#0" expanded="true" />
+                <element signature="e#1355#1356#0" expanded="true" />
+                <marker date="1508140766289" expanded="false" signature="1226:1237" ph=" { " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/BaseHelper.java">
+      <file leaf-file-name="ContactData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/model/ContactData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="272">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GroupHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/GroupHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="25" column="61" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#232#233#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -769,15 +761,35 @@
         <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java" />
         <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/DellC.java" />
         <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/EditC.java" />
-        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java" />
-        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/BaseHelper.java" />
         <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java" />
-        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java" />
         <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/BaseHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/NavigationHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/model/GroupData.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/GroupHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/GroupCreationTests.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/GroupModificationTest.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/testGroupModification.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/NavigationHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/model/GroupData.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/SessionHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/BaseHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/TestBase.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupCreationTests.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/Application.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupModificationTest.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupDeletionTest.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/GroupHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/EditC.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/model/ContactData.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/ContactHelper.java" />
+        <option value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="818" />
     <option name="y" value="30" />
     <option name="width" value="694" />
@@ -801,9 +813,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -835,7 +846,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webtests" type="462c0819:PsiDirectoryNode" />
+              <item name="sqa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sandbox" type="b2602c69:ProjectViewProjectNode" />
@@ -843,7 +854,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webtests" type="462c0819:PsiDirectoryNode" />
+              <item name="sqa" type="462c0819:PsiDirectoryNode" />
               <item name="fw" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -852,13 +863,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="webtests" type="462c0819:PsiDirectoryNode" />
+              <item name="sqa" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sandbox" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webtests" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sqa" type="462c0819:PsiDirectoryNode" />
               <item name="webtest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -869,6 +890,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="TestNG" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -894,11 +916,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.AddC">
-    <configuration name="AddC" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.GroupModificationTest.testGroupModification">
+    <configuration name="AddC (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.sqa.webtests.fw.*" />
+          <option name="PATTERN" value="com.luxoft.sqa.webtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -906,8 +928,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtests.webtest.AddC" />
+      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtest" />
+      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtest.AddC" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -927,10 +949,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="AddC.testGroupCreation" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="AddC.testGroupCreation (1)" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.sqa.webtests.fw.*" />
+          <option name="PATTERN" value="com.luxoft.sqa.webtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -938,8 +960,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtests.webtest.AddC" />
+      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtest" />
+      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtest.AddC" />
       <option name="METHOD_NAME" value="testGroupCreation" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
@@ -959,10 +981,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="DellC" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupCreationTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.sqa.webtests.fw.*" />
+          <option name="PATTERN" value="com.luxoft.sqa.webtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -970,8 +992,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtests.webtest.DellC" />
+      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtest" />
+      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtest.GroupCreationTests" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -991,10 +1013,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="EditC" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupCreationTests.testGroupCreation" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.sqa.webtests.fw.*" />
+          <option name="PATTERN" value="com.luxoft.sqa.webtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1002,11 +1024,11 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtests.webtest.EditC" />
-      <option name="METHOD_NAME" />
+      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtest" />
+      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtest.GroupCreationTests" />
+      <option name="METHOD_NAME" value="testGroupCreation" />
       <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/webtests" />
@@ -1023,10 +1045,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="EditC.contactDell" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="GroupModificationTest.testGroupModification" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="com.luxoft.sqa.webtests.fw.*" />
+          <option name="PATTERN" value="com.luxoft.sqa.webtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1034,9 +1056,9 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtests" />
-      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtests.webtest.EditC" />
-      <option name="METHOD_NAME" value="contactDell" />
+      <option name="PACKAGE_NAME" value="com.luxoft.sqa.webtest" />
+      <option name="MAIN_CLASS_NAME" value="com.luxoft.sqa.webtest.GroupModificationTest" />
+      <option name="METHOD_NAME" value="testGroupModification" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1137,19 +1159,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.AddC" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.AddC.testGroupCreation" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.DellC" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.EditC" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.EditC.contactDell" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.AddC (1)" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.AddC.testGroupCreation (1)" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.GroupCreationTests" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.GroupModificationTest.testGroupModification" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.AddC" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.AddC.testGroupCreation" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.DellC" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.EditC.contactDell" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.EditC" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.GroupModificationTest.testGroupModification" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.GroupCreationTests.testGroupCreation" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.GroupCreationTests" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.AddC (1)" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.AddC.testGroupCreation (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -1167,62 +1189,62 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AddC - 2017.10.13 at 11h 43m 48s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 11h 50m 28s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 01m 22s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 11h 54m 41s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 28m 57s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 12h 44m 37s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 31m 31s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 12h 47m 54s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 45m 46s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 12h 49m 53s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 47m 02s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupCreationTests_testGroupCreation - 2017.10.16 at 12h 53m 06s.xml">
+      <configuration name="GroupCreationTests.testGroupCreation" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC - 2017.10.13 at 12h 49m 13s.xml">
-      <configuration name="AddC" configurationId="TestNG" />
+    <history-entry file="GroupModificationTest_testGroupModification - 2017.10.16 at 11h 54m 00s.xml">
+      <configuration name="GroupModificationTest.testGroupModification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AddC_testGroupCreation - 2017.10.13 at 12h 27m 56s.xml">
-      <configuration name="AddC.testGroupCreation" configurationId="TestNG" />
+    <history-entry file="GroupModificationTest_testGroupModification - 2017.10.16 at 12h 54m 38s.xml">
+      <configuration name="GroupModificationTest.testGroupModification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="DellC - 2017.10.13 at 11h 39m 05s.xml">
-      <configuration name="DellC" configurationId="TestNG" />
+    <history-entry file="GroupModificationTest_testGroupModification - 2017.10.16 at 13h 30m 00s.xml">
+      <configuration name="GroupModificationTest.testGroupModification" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="DellC - 2017.10.13 at 11h 43m 32s.xml">
-      <configuration name="DellC" configurationId="TestNG" />
+    <history-entry file="GroupModificationTest_testGroupModification - 2017.10.16 at 13h 36m 17s.xml">
+      <configuration name="GroupModificationTest.testGroupModification" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32853404" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.66884816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66884816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39921466" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1241,73 +1263,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webtests/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/DellC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="56" column="40" lean-forward="false" selection-start-line="56" selection-start-column="40" selection-end-line="56" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/EditC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="57" lean-forward="true" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
@@ -1323,7 +1279,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="65" lean-forward="false" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
@@ -1339,7 +1295,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="10" lean-forward="false" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
@@ -1355,7 +1311,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
@@ -1473,93 +1429,242 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/TestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/EditC.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/DellC.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/DellC.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/BaseHelper.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/NavigationHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#232#233#0" expanded="true" />
-            <element signature="e#449#450#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="47" lean-forward="true" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/ContactHelper.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/GroupHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#237#238#0" expanded="true" />
-            <element signature="e#266#267#0" expanded="true" />
-            <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-          </folding>
+          <caret line="8" column="45" lean-forward="true" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/fw/SessionHelper.java">
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/GroupCreationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/GroupModificationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/testGroupModification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="46" lean-forward="false" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
+          <caret line="5" column="39" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/NavigationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-            <element signature="e#778#779#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtests/webtest/AddC.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.11/77da7afb24d57b640d9803593a6222c7de12dd4e/testng-6.11-sources.jar!/org/testng/SuiteRunnerWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="892">
+          <caret line="88" column="11" lean-forward="true" selection-start-line="88" selection-start-column="11" selection-end-line="88" selection-end-column="11" />
+          <folding>
+            <element signature="e#2713#2714#0" expanded="false" />
+            <element signature="e#2778#2779#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/BaseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/SessionHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#190#191#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-remote-driver/3.6.0/1707eb20e0231f0197e8583ab3b48bfa24d7bd51/selenium-remote-driver-3.6.0-sources.jar!/org/openqa/selenium/remote/ErrorHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="943">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupModificationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="85" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="11" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="27" column="50" lean-forward="true" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#1396#1397#0" expanded="true" />
+            <element signature="e#1432#1433#0" expanded="true" />
+            <element signature="e#1475#1476#0" expanded="true" />
+            <element signature="e#1509#1510#0" expanded="true" />
+            <element signature="e#1562#1563#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+            <element signature="e#1627#1628#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/EditC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/TestBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#341#342#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#414#415#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/model/GroupData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding>
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#272#273#0" expanded="true" />
+            <element signature="e#305#306#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+            <element signature="e#396#397#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/GroupHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="61" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="25" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupCreationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="50" lean-forward="true" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/model/ContactData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/fw/ContactHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#308#309#0" expanded="true" />
+            <element signature="e#337#338#0" expanded="true" />
+            <element signature="e#1293#1294#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <marker date="1508140766289" expanded="false" signature="1226:1237" ph=" { " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/GroupDeletionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtests/src/test/java/com/luxoft/sqa/webtest/AddC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
