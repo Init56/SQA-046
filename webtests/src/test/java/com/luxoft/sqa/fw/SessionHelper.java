@@ -2,8 +2,11 @@ package com.luxoft.sqa.fw;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
-public class SessionHelper extends BaseHelper {
+import java.util.List;
+
+public class SessionHelper extends HelperBase {
 
     public SessionHelper(WebDriver driver) {
         super(driver);
@@ -14,6 +17,7 @@ public class SessionHelper extends BaseHelper {
         type(By.name("user"), userName);
         type(By.name("pass"), password);
         click(By.cssSelector("input[type=\"Submit\"]"));
+
 
     }
 
