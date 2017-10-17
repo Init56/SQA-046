@@ -1,20 +1,16 @@
-
 package com.luxoft.sqa.webtest;
 
-import com.luxoft.sqa.model.GroupData;
+import com.luxoft.sqa.model.ContactData;
 import org.testng.annotations.Test;
-
-
 
 public class EditC extends TestBase {
 
     @Test
-    public void contactDell() {
-        if(! app.getContactHelper().isThereAGroup()){
-            app.getContactHelper().creteGroup(new GroupData("Test1","Test2", "Test3"));
-        app.getContactHelper().edit();
-        //tearDown();
+    public void testContactModification() {
+        app.getNavigationHelper().gotoHomePage();
+        app.getContactHelper().initContactModification();
+        app.getContactHelper().fillContactForm(new ContactData("test_name", "test_surname", null), false);
+        app.getContactHelper().submitContactModification();
+        app.getContactHelper().returnToHomePage();
     }
-
-
 }

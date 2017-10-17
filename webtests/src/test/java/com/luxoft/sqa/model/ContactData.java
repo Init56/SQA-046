@@ -1,20 +1,26 @@
 package com.luxoft.sqa.model;
 
 public class ContactData {
-    public ContactData(String firstname,String middlename) {
+
+    private final String firstname;
+    private final String secondname;
+    private String group;
+
+    public ContactData(String firstname, String secondname, String group) {
         this.firstname = firstname;
-        this.middlename = middlename;
+        this.secondname = secondname;
+        this.group = group;
     }
 
-    public String getFirstName() {
+    public String getFirstname() {
         return firstname;
     }
 
-    public String getMiddlename() {
-        return middlename;
+    public String getLastname() {
+        return secondname;
     }
 
-
-    String firstname;
-    String middlename;
- }
+    public String getGroup() {
+        return group;
+    }
+}
