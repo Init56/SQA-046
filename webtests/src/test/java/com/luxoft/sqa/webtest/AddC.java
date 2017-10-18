@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class AddC extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void testContactCreation() {
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().initContactCreation();

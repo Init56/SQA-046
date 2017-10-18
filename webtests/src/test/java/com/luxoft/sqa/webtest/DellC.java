@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 public class DellC extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void contactDell() {
         app.getContactHelper().dell();
         tearDown();

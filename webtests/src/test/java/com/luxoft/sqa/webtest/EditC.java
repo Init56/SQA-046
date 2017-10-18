@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class EditC extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void testContactModification() {
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().initContactModification();

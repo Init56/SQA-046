@@ -1,23 +1,20 @@
 package com.luxoft.sqa.model;
 
 public class GroupData {
-    String name;
-    String header;
-    String footer;
+    private String name;
+     private String header;
+    private String footer;
+    int id;
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    String id;
-
-
-
-    public GroupData(String id, String name, String header, String footer) {
+    public GroupData(int id, String name, String header, String footer) {
         this.id = id;
         this.name = name;
         this.header = header;
@@ -31,19 +28,16 @@ public class GroupData {
 
         GroupData groupData = (GroupData) o;
 
-        if (name != null ? !name.equals(groupData.name) : groupData.name != null) return false;
-        return id != null ? id.equals(groupData.id) : groupData.id == null;
+        return name != null ? name.equals(groupData.name) : groupData.name == null;
     }
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (id != null ? id.hashCode() : 0);
-        return result;
+        return 0;
     }
 
     public GroupData(String name, String header, String footer) {
-        this.id = null;
+        this.id = Integer.MAX_VALUE;
         this.name = name;
         this.header = header;
         this.footer = footer;
