@@ -1,0 +1,48 @@
+using DriverWrapper;
+using DriverWrapper.Core;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+
+namespace VacationAuto_Test.Page.Common.Grid
+{
+    public abstract class Row
+    {
+        private readonly IWebDriver _driver;
+        public IWebElement Element { get; }
+
+        protected Row(IWebDriver driver, IWebElement element)
+        {
+            _driver = driver;
+            Element = element;
+        }
+
+        public Cell this[int index] => new Cell(_driver, Element
+            .FindElement(By.CssSelector($"td[role='gridcell']:nth-child({index + 1})")));
+
+        public Row Click()
+        {
+            Element.Click();
+
+            return this;
+        }
+        public Row DoubleClick()
+        {
+            return this;
+        }
+        public string GetAttribute(string attribute, By @by = null)
+        {
+            return @by == null ?
+                Element.GetAttribute(attribute) :
+                Element.FindElement(@by).GetAttribute(attribute);
+        }
+
+        public bool Disabled()
+        {
+            return GetAttribute("class").Contains("rba-row-background-gray");
+        }
+        public bool Selected()
+        {
+            return GetAttribute("class").Contains("k-state-selected");
+        }
+    }
+}
