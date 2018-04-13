@@ -1,0 +1,236 @@
+using System;
+using System.Collections.ObjectModel;
+using System.Globalization;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+
+
+
+
+
+
+
+
+    public class DatePicker
+    {
+        private readonly IWebDriver _driver;
+        private readonly IWebElement _element;
+        private readonly string _ariaOwns;
+        private string _ariaDescendant;
+
+        private readonly bool _hasAria;
+
+        public IWebElement Button => _hasAria
+            ? _driver.FindElement(By.CssSelector($"span[aria-controls='{_ariaOwns}']"))
+            : _element.FindElement(By.CssSelector(".k-select"));
+
+        private IWebElement Calendar => _driver.FindElement(By.XPath($".//table[@aria-activedescendant='{_ariaDescendant}']/ancestor::div[@data-role='calendar']"));
+
+        public bool Enabled => _element.Enabled;
+
+        public string GetAttribute(string attribute, By @by = null)
+        {
+            return @by == null ?
+                _element.GetAttribute(attribute) :
+                _element.FindElement(@by).GetAttribute(attribute);
+        }
+
+        public bool Disabled()
+        {
+            return GetAttribute("aria-disabled").Contains("true");
+        }
+
+        public DatePicker(IWebDriver driver, IWebElement element, bool hasAria = true)
+        {
+            _driver = driver;
+            _element = element;
+            _hasAria = hasAria;
+
+            _ariaOwns = _element.GetAttribute("aria-owns");
+        }
+        public void Click()
+        {
+            _element.Click();
+        }
+
+        public DatePicker Set(int year, int month, int day)
+        {
+            _element.Clear();
+            _element.SendKeys($"{day}.{month}.{year}");
+            return this;
+        }
+
+        public DatePicker Set(string date)
+        {
+            _element.Clear();
+            _element.SendKeys(date);
+            return this;
+        }
+
+        public DatePicker Set(DateTime date)
+        {
+            var d = date.ToString("dd.MM.yyyy");
+            Thread thread = new Thread(() => Clipboard.SetText(d));
+
+            DateTime.Now.ToShortDateString();
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+
+            _element.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            //_element.Clear();
+            Thread.Sleep(200);
+            _element.SendKeys(OpenQA.Selenium.Keys.Control + "v");
+
+            return this;
+        }
+
+        public DatePicker Select(DateTime date)
+        {
+            var shortMonth = date.ToString("MMM");
+            var longMonth = date.ToString("MMMM");
+            var day = date.Day.ToString();
+
+            Open();
+
+            IWebElement current = Calendar.FindElement(By.ClassName("k-nav-fast"));
+
+            if (current.GetAttribute("innerHTML") == $"{longMonth} {date.Year}")
+            {
+                FindAndClick((e) => e.Text == day && e.GetAttribute("data-value") == $"{date.Year}/{date.Month - 1}/{date.Day}", date);
+            }
+            else
+            {
+                if (current.GetAttribute("innerHTML").EndsWith(date.Year.ToString()))
+                {
+                    current.Click();
+                    FindAndClick(e => e.Text == shortMonth, date);
+
+                    FindAndClick(e => e.Text == day, date);
+                }
+                else
+                {
+                    current.Click();
+                    current.Click();
+
+                    string[] year = current.GetAttribute("innerHTML").Split('-');
+
+                    int yearstart = int.Parse(year[0]);
+                    int yearend = int.Parse(year[1]);
+
+                    if (date.Year >= yearstart && date.Year <= yearend)
+                    {
+                        FindAndClick((e) => e.Text == date.Year.ToString(), date);
+
+                        FindAndClick((e) => e.Text == shortMonth, date);
+
+                        FindAndClick((e) => e.Text == day, date);
+                    }
+                    else
+                    {
+                        current.Click();
+
+                        FindAndClick((e) =>
+                        {
+                            string[] y = e.Text.Split('-');
+
+                            int st = int.Parse(y[0]);
+                            int en = int.Parse(y[1]);
+
+                            return date.Year >= st && date.Year <= en;
+                        }, date);
+
+                        FindAndClick((e) => e.Text == date.Year.ToString(), date);
+
+                        FindAndClick((e) => e.Text == shortMonth, date);
+
+                        FindAndClick((e) => e.Text == day, date);
+                    }
+                }
+            }
+
+            return this;
+        }
+
+        private void FindAndClick(Func<IWebElement, bool> funcFilter, DateTime date)
+        {
+            ReadOnlyCollection<IWebElement> cells = Calendar.FindElements(By.CssSelector("[role=\"gridcell\"] a"));
+
+            var uiDay = cells.FirstOrDefault(funcFilter);
+
+            if (uiDay == null)
+            {
+                throw new NotFoundException(date.ToString(CultureInfo.CurrentCulture));
+            }
+
+            uiDay.Click();
+        }
+
+        public DatePicker Select(int year, int month, int day)
+        {
+            return Select(new DateTime(year, month, day));
+        }
+
+        public DatePicker SelectCurrentDay()
+        {
+            Open();
+
+            Calendar.FindElement(By.ClassName("k-nav-today")).Click();
+            return this;
+        }
+
+        public DateTime? GetDate()
+        {
+            string value = _element.GetAttribute("value");
+
+            if (string.IsNullOrEmpty(value))
+            {
+                return null;
+            }
+
+            return DateTime.Parse(value);
+        }
+
+        public DatePicker BackSpace()
+        {
+            _element.Clear();
+            return this;
+        }
+
+
+        public DatePicker Clear()
+        {
+            Open();
+
+            Calendar.FindElement(By.CssSelector(".k-footer .k-button")).Click();
+            return this;
+        }
+
+        public string Text => _element.Text;
+
+        private void Open()
+        {
+            Button.Click();
+
+            if (!string.IsNullOrEmpty(_ariaDescendant))
+            {
+                return;
+            }
+
+            _ariaDescendant = _element.GetAttribute("aria-activedescendant");
+
+            if (string.IsNullOrEmpty(_ariaDescendant))
+            {
+                _ariaDescendant = _element
+                    .FindElement(By.CssSelector("[data-role='datepicker']"))
+                    .GetAttribute("aria-activedescendant");
+            }
+           
+        }
+    }
+}
