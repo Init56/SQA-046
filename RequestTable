@@ -1,0 +1,51 @@
+using OpenQA.Selenium;
+using VacationAuto_Test.Page.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Page.MyRequest
+{
+    public class RequestsTable
+    {
+        private readonly IWebDriver _driver;
+        private readonly IWebElement _element;
+
+        private IWebElement RequeststList => _driver.FindElement(By.Id("vacations"));
+
+        /// <summary>
+        /// Кнопка создания завяки на отпуск
+        /// </summary>
+        public Button CreateRequestButton => new Button(RequeststList.FindElement(By.ClassName("add-request")));
+        /// <summary>
+        /// Кнопка создания завяки на отпуск
+        /// </summary>
+        public Button CreateRequestForEmployee => new Button(RequeststList.FindElement(By.ClassName("add-request-employee")));
+        /// <summary>
+        /// Кнопка изменения заявки на отпуск
+        /// </summary>
+        public Button EditRequestButton => new Button(RequeststList.FindElement(By.ClassName("edit-button")));
+        /// <summary>
+        /// Кнопка удаления заявки на отпуск
+        /// </summary>
+        public Button RemoveRequestButton => new Button(RequeststList.FindElement(By.ClassName("k-grid-remove")));
+        /// <summary>
+        /// Кнопка отправки на согласование заявки на отпуск
+        /// </summary>
+        public Button ApproveRequestButton => new Button(RequeststList.FindElement(By.ClassName("k-grid-approve")));
+        /// <summary>
+        /// Кнопка удаления заявки на отпуск
+        /// </summary>
+        public Button RefreshButton => new Button(RequeststList.FindElement(By.ClassName("fa fa-refresh")));
+
+        /// <summary>
+        /// Список документов
+        /// </summary>
+        public RequestsGrid Requests => new RequestsGrid(_driver, RequeststList);
+
+        public RequestsTable(IWebDriver driver)
+        {
+            _driver = driver;
+        }
+    }
+}
