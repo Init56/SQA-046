@@ -1,0 +1,10 @@
+using System;
+using NUnit.Framework;
+
+namespace VacationAuto_Test.Core.Common.Texts
+{
+    [AttributeUsage(AttributeTargets.Method)]
+    public class ParallelAttribute : PropertyAttribute
+    {
+    }
+}
