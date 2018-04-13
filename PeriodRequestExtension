@@ -1,0 +1,136 @@
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using VacationAuto_Test.Helpers.Model;
+using VacationAuto_Test.Page.Common;
+using VacationAuto_Test.Page.MyRequest;
+
+namespace VacationAuto_Test.Extension
+{
+    public static class PeriodRequestExtension
+    {
+
+        public static string HolydaysDateFrom(this PeriodRequest period)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return "10.02.2018";
+                case PeriodRequest.Week:
+                    return "17.02.2018";
+                default:
+                    return "";
+            }
+        }
+
+
+
+        public static int CountDays(this PeriodRequest period)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return 13;
+                case PeriodRequest.Week:
+                    return 6;
+                default:
+                    return 0;
+            }
+        }
+        public static int QuantityDays(this PeriodRequest period)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return 14;
+                case PeriodRequest.Week:
+                    return 7;
+                default:
+                    return 0;
+            }
+        }
+
+        public static CheckBox CheckBoxByPeriod(this PeriodRequest period, RequestForm form)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return form.CBTwoWeek;
+                case PeriodRequest.Week:
+                    return form.CBOneWeek;
+                case PeriodRequest.Days:
+                    return form.CBByDays;
+                case PeriodRequest.Corp:
+                    return form.CBCorp;
+                default: return null;
+            }
+        }
+
+        public static DatePicker DatePickeFrom(this PeriodRequest period, RequestForm form)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return form.DPDateFrom2Week;
+                case PeriodRequest.Week:
+                    return form.DPDateFromOneWeek;
+                case PeriodRequest.Days:
+                    return form.DPDateFromByDays;
+                case PeriodRequest.Corp:
+                    return form.DPDateFromCorp;
+                default: return null;
+            }
+        }
+
+
+        public static DatePicker DatePickeTo(this PeriodRequest period, RequestForm form)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return form.DPDateTo2Week;
+                case PeriodRequest.Week:
+                    return form.DPDateToOneWeek;
+                case PeriodRequest.Days:
+                    return form.DPDateToByDays;
+                case PeriodRequest.Corp:
+                    return form.DPDateToCorp;
+                default: return null;
+            }
+        }
+        public static TextBox DateFrom(this PeriodRequest period, RequestForm form)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return form.DateFrom2W;
+                case PeriodRequest.Week:
+                    return form.DateFromOneWeek;
+                case PeriodRequest.Days:
+                    return form.DateFromByDays;
+                case PeriodRequest.Corp:
+                    return form.DateFromCorp;
+                default: return null;
+            }
+        }
+        public static TextBox DateTo(this PeriodRequest period, RequestForm form)
+        {
+            switch (period)
+            {
+                case PeriodRequest.TwoWeek:
+                    return form.DateTo2Week;
+                case PeriodRequest.Week:
+                    return form.DateToOneWeek;
+                case PeriodRequest.Days:
+                    return form.DateToByDays;
+                case PeriodRequest.Corp:
+                    return form.DateToCorp;
+                default: return null;
+            }
+        }
+
+    }
+}
