@@ -1,0 +1,106 @@
+using DriverWrapper.Core;
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using VacationAuto_Test.Extension;
+using VacationAuto_Test.Helpers.Model;
+using VacationAuto_Test.Page.Common;
+using VacationAuto_Test.Page.MyRequest;
+
+namespace VacationAuto_Test.Helpers
+{
+    public class VacationRequestHelper
+    {
+        private readonly IWebDriver driver;
+        private RequestForm ReqForm => new RequestForm(driver, driver.FindElement(By.Id("createLeaveRequestWindow")));
+        public RequestsTable RequestsTable => new RequestsTable(driver);
+
+        public VacationRequestHelper(IWebDriver driver)
+        {
+            this.driver = driver;
+        }
+
+        public void Create(VacationRequests requests) //PeriodRequest period, DateTime from, DateTime to)
+        {
+            //Ожидание загрузка страницы
+            Thread.Sleep(3000);
+            //Открываем форму создания заявки
+            RequestsTable.CreateRequestButton.Click();
+            //Ожидание открытие формы
+            //driver.WaitHasAppeard(By.Id("createLeaveRequestWindow_wnd_title"));
+
+            foreach (var request in requests)
+            {
+                var period = request.Period;
+                var from = request.From;
+                var to = request.To;
+
+                //Выбор периода
+                period.CheckBoxByPeriod(ReqForm).Click();
+                //Заполение формы
+                period.DatePickeFrom(ReqForm).Set(from);
+                period.DateFrom(ReqForm).SendKeys(Keys.Enter);
+
+                if (period == PeriodRequest.Corp || period == PeriodRequest.Days)
+                {
+                    period.DatePickeTo(ReqForm).Set(to);
+                    period.DateTo(ReqForm).SendKeys(Keys.Enter);
+                }
+            }
+        }
+        public void CreateTwoVariant(VacationRequestTwoVariant requests)
+        {
+            //Ожидание загрузка страницы
+            Thread.Sleep(3000);
+            //Открываем форму создания заявки
+            RequestsTable.CreateRequestButton.Click();
+            //Ожидание открытие формы
+            //driver.WaitHasAppeard(By.Id("createLeaveRequestWindow_wnd_title"));
+
+            foreach (var request in requests)
+            {
+                var period1 = request.Period1;
+                var from1 = request.From1;
+                var to1 = request.To1;
+                var period2 = request.Period2;
+                var from2 = request.From2;
+                var to2 = request.To2;
+
+                //Выбор периода 1
+                period1.CheckBoxByPeriod(ReqForm).Click();
+                //Заполение формы 1
+                period1.DatePickeFrom(ReqForm).Set(from1);
+                period1.DateFrom(ReqForm).SendKeys(Keys.Enter);
+                //Выбор периода 2
+                period2.CheckBoxByPeriod(ReqForm).Click();
+                //Заполение формы 1
+                period2.DatePickeFrom(ReqForm).Set(from2);
+                period2.DateFrom(ReqForm).SendKeys(Keys.Enter);
+
+                if (period1 == PeriodRequest.Corp || period1 == PeriodRequest.Days)
+                {
+                    period1.DatePickeTo(ReqForm).Set(to1);
+                    period1.DateTo(ReqForm).SendKeys(Keys.Enter);
+                }
+                if (period2 == PeriodRequest.Corp || period2 == PeriodRequest.Days)
+                {
+                    period2.DatePickeTo(ReqForm).Set(to2);
+                    period2.DateTo(ReqForm).SendKeys(Keys.Enter);
+                }
+            }
+
+        }
+
+        public RequestsGrid.RequestsRow GetCreatedRow(string status, string author, VacationRequests requests)
+            => RequestsTable.Requests.FindRowWith.Full(status, author, requests.MinFrom, requests.MaxTo, requests.QDays);
+
+        public RequestsGrid.RequestsRow GetCreatedRow(string status, string author, DateTime minFrom, DateTime maxTo, int qDays  )
+    => RequestsTable.Requests.FindRowWith.Full(status, author, minFrom, maxTo, qDays);
+
+
+    }
+}
