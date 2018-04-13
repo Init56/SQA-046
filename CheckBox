@@ -1,0 +1,31 @@
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class CheckBox
+    {
+        private readonly IWebElement _title;
+        public IWebElement Element { get; }
+        public bool IsChecked => Element.GetAttribute("checked") == "true";
+        public bool IsIndeterminate => Element.GetAttribute("indeterminate") == "true";
+        public string Text => Element.Text;
+
+        public CheckBox(IWebDriver driver, IWebElement element)
+        {
+            Element = element;
+
+            if (Element == null)
+            {
+                return;
+            }
+
+            var id = Element.GetAttribute("id");
+            _title = driver.FindElement(By.CssSelector($"[for=\"{id}\"]"));
+        }
+
+        public void Click()
+        {
+            _title.Click();
+        }
+    }
+}
