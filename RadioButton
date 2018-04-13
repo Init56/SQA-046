@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class RadioButton : BaseObject
+    {
+        public bool Displayed => _element.Displayed;
+
+        public string Value => _element.GetAttribute("value");
+
+        public RadioButton(IWebElement element) : base(element)
+        {
+
+        }
+
+        public void Click()
+        {
+            _element.Click();
+        }
+    }
+}
