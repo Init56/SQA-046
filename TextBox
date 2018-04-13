@@ -1,0 +1,49 @@
+using DriverWrapper;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System.Threading;
+
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class TextBox
+    {
+        public IWebElement Element { get; }
+
+        public string Text => Element.Text;
+
+        public string AltText => Element.GetAttribute("value");
+
+        public TextBox(IWebElement element)
+        {
+            Element = element;
+        }
+
+        public TextBox Click()
+        {
+            Element.Click();
+            return this;
+        }
+
+        public TextBox Clear()
+        {
+            Element.Clear();
+            return this;
+        }
+
+        public TextBox SendKeys(string text)
+        {
+            Element.SendKeys(text);
+            return this;
+        }
+
+        public TextBox ReplaceText(string text)
+        {
+            Thread.Sleep(100);
+            Element.Click();
+            Element.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            Element.SendKeys(text);
+            return this;
+        }
+    }
+}
