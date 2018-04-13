@@ -1,0 +1,55 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Helpers.Model
+{
+    public class VacationRequests : IEnumerable<VacationRequest>
+    {
+        private List<VacationRequest> _requests;
+
+        public VacationRequests()
+        {
+            _requests = new List<VacationRequest>();
+        }
+
+        public int QDays => (MaxTo - MinFrom).Days + 1;
+        public DateTime MinFrom => _requests.Select(x => x.From).Min();
+        public DateTime MaxTo => _requests.Select(x => x.To).Max();
+
+        public void Add(VacationRequest item)
+        {
+            _requests.Add(item);
+        }
+
+
+        public IEnumerator<VacationRequest> GetEnumerator()
+        {
+            return _requests.GetEnumerator();
+        }
+
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
+    public class VacationRequest
+    {
+        public VacationRequest(PeriodRequest period, DateTime from, DateTime to)
+        {
+            Period = period;
+            From = from;
+            To = to;
+        }
+
+        public PeriodRequest Period { get; private set; }
+        public DateTime From { get; private set; }
+        public DateTime To { get; private set; }
+    }
+
+}
