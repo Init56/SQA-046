@@ -1,0 +1,18 @@
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public abstract class Window
+    {
+        protected readonly IWebElement Element;
+        protected readonly IWebDriver _driver;
+
+        public string Title => Element.FindElement(By.ClassName("k-window"))?.Text;
+
+        protected Window(IWebDriver driver, IWebElement element)
+        {
+            _driver = driver;
+            Element = element;
+        }
+    }
+}
