@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common.Grid
+{
+    public abstract class Grid<TRow>
+        where TRow : Row
+    {
+        protected readonly IWebDriver Driver;
+        protected readonly IWebElement Element;
+
+        public IEnumerable<TRow> Rows => Element
+            .FindElements(By.CssSelector("tbody tr[role='row']"))
+            .Select(e => (TRow)Activator.CreateInstance(typeof(TRow), Driver, e));
+
+        protected Grid(IWebDriver driver, IWebElement element)
+        {
+            Driver = driver;
+            Element = element;
+        }
+
+        public TRow this[int index] => (TRow)Activator.CreateInstance(typeof(TRow), Driver,
+            Element.FindElement(By.CssSelector($"tbody tr[role='row']:nth-child({index + 1})")));
+    }
+}
