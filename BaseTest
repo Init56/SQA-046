@@ -1,0 +1,90 @@
+using System;
+using System.Reflection;
+using System.Threading;
+using DriverWrapper.Core;
+using ExtentReportManager;
+using NUnit.Framework;
+using OpenQA.Selenium;
+
+using UniqueContainerManager;
+using DriverWrapper;
+using VacationAuto_Test.Page.Common;
+
+namespace VacationAuto_Test.Tests._Common
+{
+    [TestFixture(typeof(AFirefoxDriver))]
+    //[TestFixture(typeof(AInternetExplorerDriver))]
+    public class BaseTest<TDriver> where TDriver : IWebDriver, new()
+    {
+        protected const string Host = "http://s-msk-t-hr-ws1.raiffeisen.ru/Vacations/VacationsOrders";
+
+
+        protected IWebDriver Driver { get; private set; }
+        protected IWebElement Element { get; private set; }
+
+        protected ReportManager Report;
+
+        public Alert Alert => new Alert(Driver, Element);
+
+        [OneTimeSetUp]
+        public virtual void OneTimeSetUp()
+        {
+            Thread.Sleep(1000);
+            Driver = new TDriver();
+        }
+
+        [SetUp]
+        public virtual void SetUp()
+        {
+            var testClass = TestContext.CurrentContext.Test.ClassName;
+            var classType = Type.GetType(testClass);
+            Report = new ReportManager();
+            Report.Init(classType);
+
+            Driver.Navigate().GoToUrl(Host);
+
+            OpenSecondTab();
+        }
+
+        [TearDown]
+        public virtual void TearDown()
+        {
+            UniqueContainer.RemoveUniqueEntities();
+            Report.End();
+        }
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Driver.Quit();
+            Driver.Dispose();
+        }
+
+        public void Refresh()
+        {
+            Driver.Quit();
+            Driver.Dispose();
+
+            Driver = new TDriver();
+        }
+
+        private void OpenSecondTab()
+        {
+            var type = Type.GetType(TestContext.CurrentContext.Test.ClassName);
+            var method = type.GetMethod(TestContext.CurrentContext.Test.MethodName);
+            var attribute = method.GetCustomAttribute(typeof(ParallelAttribute));
+
+            if (attribute != null)
+            {
+                Driver.ExecuteScript($"window.open('{Host}', '_blank');");
+                SwitchTab(1);
+            }
+        }
+
+        public void SwitchTab(int tab)
+        {
+            Driver.SwitchTo().Window(Driver.WindowHandles[tab - 1]);
+            Thread.Sleep(100);
+        }
+    }
+}
