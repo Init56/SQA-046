@@ -1,0 +1,43 @@
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class Alert
+    {
+        private readonly IWebDriver _driver;
+        private readonly IWebElement _element;
+        //public Button CreateNewButton => new Button(_driver.FindElement(By.ClassName("add-request")));
+        public string AltText => _element.GetAttribute("value");
+        public string Text => _element.Text;
+
+
+        public Button SuccessButton => new Button(_driver.FindElement(By.ClassName("btn-success")));
+
+        public Button CancelButton => new Button(_driver.FindElement(By.ClassName("btn-danger")));
+        public string GetAttribute(string attribute, By @by = null)
+        {
+            return @by == null ?
+                _element.GetAttribute(attribute) :
+                _element.FindElement(@by).GetAttribute(attribute);
+        }
+        public bool DisplayNone()
+        {
+            return GetAttribute("class").Contains("displaynone");
+        }
+        public bool DisplayAlert()
+        {
+            return GetAttribute("style").Contains("display");
+        }
+
+        public Alert(IWebDriver driver, IWebElement element)
+        {
+            _driver = driver;
+            _element = element;
+        }
+    }
+}
