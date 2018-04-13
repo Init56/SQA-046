@@ -1,0 +1,59 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Helpers.Model
+{
+    public class VacationRequestTwoVariant : IEnumerable<VacationRequestsTwoVariant>
+    {
+        private List<VacationRequestsTwoVariant> _requests;
+
+        public VacationRequestTwoVariant()
+        {
+            _requests = new List<VacationRequestsTwoVariant>();
+        }
+
+        public int QDays => (MaxTo - MinFrom).Days + 1;
+        public DateTime MinFrom => _requests.Select(x => x.From1).Min();
+        public DateTime MaxTo => _requests.Select(x => x.To1).Max();
+
+        public void Add(VacationRequestsTwoVariant item)
+        {
+            _requests.Add(item);
+        }
+
+
+        public IEnumerator<VacationRequestsTwoVariant> GetEnumerator()
+        {
+            return _requests.GetEnumerator();
+        }
+
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }   
+    public class VacationRequestsTwoVariant
+    {
+        public VacationRequestsTwoVariant(PeriodRequest period1, DateTime from1, DateTime to1, PeriodRequest period2, DateTime from2, DateTime to2)
+        {
+            Period1 = period1;
+            From1 = from1;
+            To1 = to1;
+            Period2 = period2;
+            From2 = from2;
+            To2 = to2;
+        }
+
+        public PeriodRequest Period1 { get; private set; }
+        public DateTime From1 { get; private set; }
+        public DateTime To1 { get; private set; }
+        public PeriodRequest Period2 { get; private set; }
+        public DateTime From2 { get; private set; }
+        public DateTime To2 { get; private set; }
+    }
+}
