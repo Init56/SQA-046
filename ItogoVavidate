@@ -1,0 +1,78 @@
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using VacationAuto_Test.Page.Common;
+
+namespace VacationAuto_Test.Helpers
+{
+    static class  ItogoVavidate
+    {
+        public static bool Assert2DateFrom ( TextBox element1, TextBox element2, TextBox element3)
+        {
+
+            DateTime from1 = Convert.ToDateTime(element1.AltText);
+            DateTime from2 = Convert.ToDateTime(element2.AltText);
+            DateTime from = Convert.ToDateTime(element3.AltText);
+            var min = from1 < from2 ? from1 : from2;
+            return min == from ;
+        }
+        public static bool Assert3DateFrom(TextBox element1, TextBox element2, TextBox element3, TextBox element4)
+        {
+
+            DateTime from1 = Convert.ToDateTime(element1.AltText);
+            DateTime from2 = Convert.ToDateTime(element2.AltText);
+            DateTime from3 = Convert.ToDateTime(element3.AltText);
+            DateTime from = Convert.ToDateTime(element4.AltText);
+            DateTime[] array = new DateTime[] { from1, from2, from3 };
+            var min = array.Min();
+            return min == from;
+        }
+        public static bool Assert4DateFrom(TextBox element1, TextBox element2, TextBox element3, TextBox element4, TextBox element5)
+        {
+
+            DateTime from1 = Convert.ToDateTime(element1.AltText);
+            DateTime from2 = Convert.ToDateTime(element2.AltText);
+            DateTime from3 = Convert.ToDateTime(element3.AltText);
+            DateTime from4 = Convert.ToDateTime(element4.AltText);
+            DateTime from = Convert.ToDateTime(element5.AltText);
+            DateTime[] array = new DateTime[] { from1, from2, from3, from4 };
+            var min = array.Min();
+            return min == from;
+        }
+        public static bool Assert2DateTo(TextBox element1, TextBox element2, TextBox element3)
+        {
+
+            DateTime to1 = Convert.ToDateTime(element1.AltText);
+            DateTime to2 = Convert.ToDateTime(element2.AltText);
+            DateTime to = Convert.ToDateTime(element3.AltText);
+            var max = to1 > to2 ? to1 : to2;
+            return max == to;
+        }
+        public static bool Assert3DateTo(TextBox element1, TextBox element2, TextBox element3, TextBox element4)
+        {
+
+            DateTime to1 = Convert.ToDateTime(element1.AltText);
+            DateTime to2 = Convert.ToDateTime(element2.AltText);
+            DateTime to3 = Convert.ToDateTime(element3.AltText);
+            DateTime to = Convert.ToDateTime(element4.AltText);
+            DateTime[] array = new DateTime[] { to1, to2, to3 };
+            var min = array.Max();
+            return min == to;
+        }
+        public static bool Assert4DateTo(TextBox element1, TextBox element2, TextBox element3, TextBox element4, TextBox element5)
+        {
+
+            DateTime to1 = Convert.ToDateTime(element1.AltText);
+            DateTime to2 = Convert.ToDateTime(element2.AltText);
+            DateTime to3 = Convert.ToDateTime(element3.AltText);
+            DateTime to4 = Convert.ToDateTime(element4.AltText);
+            DateTime to = Convert.ToDateTime(element5.AltText);
+            DateTime[] array = new DateTime[] { to1, to2, to3, to4 };
+            var min = array.Max();
+            return min == to;
+        }
+    }
+}
