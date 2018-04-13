@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Helpers.Model
+{
+    public enum PeriodRequest
+    {
+        [Description("На 2 недели")]
+        TwoWeek,
+        [Description("На одну неделю")]
+        Week,
+        [Description("По дням")]
+        Days,
+        [Description("Корпоративный")]
+        Corp
+    }
+}
