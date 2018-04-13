@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using OpenQA.Selenium;
+
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class Label
+    {
+        public IWebElement Element { get; }
+
+        public string Text => Element.Text;
+        public string AltText => Element.GetAttribute("innerHTML");
+
+        public Label(IWebElement element)
+        {
+            Element = element;
+        }
+    }
+}
