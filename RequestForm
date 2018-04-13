@@ -1,0 +1,171 @@
+using OpenQA.Selenium;
+using VacationAuto_Test.Page.Common;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Page.MyRequest
+{
+    /// <summary>
+    /// Окно создания\изменения заявки
+    /// </summary>
+    public class RequestForm : Window
+    {
+        private readonly IWebDriver _driver;
+        private readonly IWebElement _element;
+
+        //private IWebElement ReqFrm => _driver.FindElement(By.ClassName("create-container"));
+        private IWebElement ReqFrm => _driver.FindElement(By.Id("createLeaveRequestWindow"));
+        #region На две недели
+        /// <summary>
+        /// Чекбокс "На 2 недели"
+        /// </summary>
+        public CheckBox CBTwoWeek => new CheckBox(_driver, _element.FindElement(By.Id("2weeksCB")));
+        /// <summary>
+        /// Дата [С] для двухнедельного отпуска
+        /// </summary>
+        public TextBox DateFrom2W => new TextBox(_element.FindElement(By.Id("datepicker_2weeks_from")));
+        /// <summary>
+        /// Календарь Даты "С" "На 2 недели"
+        /// </summary>
+        public DatePicker DPDateFrom2Week => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_2weeks_from")));
+        /// <summary>
+        /// Дата [По] для двухнедельного отпуска
+        /// </summary>
+        public TextBox DateTo2Week => new TextBox(_element.FindElement(By.Id("datepicker_2weeks_to")));
+        /// <summary>
+        /// Календарь Даты "По" "На 2 недели"
+        /// </summary>
+        public DatePicker DPDateTo2Week => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_2weeks_to")));
+        #endregion
+        #region На одну неделю
+        /// <summary>
+        /// Чекбокс "На одну неделю"
+        /// </summary>
+        public CheckBox CBOneWeek => new CheckBox(_driver, _element.FindElement(By.Id("1weekCB")));
+        /// <summary>
+        /// Дата [С] для недельного отпуска
+        /// </summary>
+        public TextBox DateFromOneWeek => new TextBox(_element.FindElement(By.Id("datepicker_1week_from")));
+        /// <summary>
+        /// Календарь Даты "С" "На одну неделю"
+        /// </summary>
+        public DatePicker DPDateFromOneWeek => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_1week_from")));
+        /// <summary>
+        /// Дата [По] для недельного отпуска
+        /// </summary>
+        public TextBox DateToOneWeek => new TextBox(_element.FindElement(By.Id("datepicker_1week_to")));
+        /// <summary>
+        /// Календарь Даты "По" "На одну неделю"
+        /// </summary>
+        public DatePicker DPDateToOneWeek => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_1week_to")));
+        #endregion
+        #region По дням
+        /// <summary>
+        /// Чекбокс "По дням"
+        /// </summary>
+        public CheckBox CBByDays => new CheckBox(_driver, _element.FindElement(By.Id("daysCB")));
+        /// <summary>
+        /// Дата [С] для отпуска По дням
+        /// </summary>
+        public TextBox DateFromByDays => new TextBox(_element.FindElement(By.Id("datepicker_days_from")));
+        /// <summary>
+        /// Календарь Даты "С" "По дням"
+        /// </summary>
+        public DatePicker DPDateFromByDays => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_days_from")));
+        /// <summary>
+        /// Дата [По] для отпуска По дням
+        /// </summary>
+        public TextBox DateToByDays => new TextBox(_element.FindElement(By.Id("datepicker_days_to")));
+        /// <summary>
+        /// Календарь Даты "По" "По дням"
+        /// </summary>
+        public DatePicker DPDateToByDays => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_days_to")));
+        #endregion
+        #region Корпоративный
+        /// <summary>
+        /// Чекбокс "Корпоративный"
+        /// </summary>
+        public CheckBox CBCorp => new CheckBox(_driver, _element.FindElement(By.Id("corpCB")));
+        /// <summary>
+        /// Дата [С] для корпоративного отпуска
+        /// </summary>
+        public TextBox DateFromCorp => new TextBox(_element.FindElement(By.Id("datepicker_corp_from")));
+        /// <summary>
+        /// Календарь Даты "С" "Корпоративный"
+        /// </summary>
+        public DatePicker DPDateFromCorp => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_corp_from")));
+        /// <summary>
+        /// Дата [По] для корпоративного отпуска
+        /// </summary>
+        public TextBox DateToCorp => new TextBox(_element.FindElement(By.Id("datepicker_corp_to")));
+        /// <summary>
+        /// Календарь Даты "По" "Корпоративный"
+        /// </summary>
+        public DatePicker DPDateToCorp => new DatePicker(_driver, _element.FindElement(By.Id("datepicker_corp_to")));
+        #endregion
+        #region Итого
+        /// <summary>
+        /// Поле [Итого]
+        /// </summary>
+        public TextBox Itogo => new TextBox(_element.FindElement(By.Id("dayCount")));
+        /// <summary>
+        /// Итоговая дата [С]
+        /// </summary>
+        public TextBox DateFrom => new TextBox(_element.FindElement(By.Id("from")));
+        /// <summary>
+        /// Итоговая дата [По]
+        /// </summary>
+        public TextBox DateTo => new TextBox(_element.FindElement(By.Id("to")));
+        #endregion
+        #region Кнопки
+        /// <summary>
+        /// Кнопка отправки на согласование заявки
+        /// </summary>
+        public Button approveRequest => new Button(_element.FindElement(By.Id("approveButton")));
+        /// <summary>
+        /// Кнопка сохранения заявки
+        /// </summary>
+        public Button SaveRequest => new Button(_element.FindElement(By.Id("saveRequest")));
+        /// <summary>
+        /// Кнопка закрытия формы заявки
+        /// </summary>
+        public Button CancelRequest => new Button(_element.FindElement(By.Id("cancelEdit")));
+        #endregion
+        #region Всплывающие предупреждения
+        /// <summary>
+        /// Всплывающее предупреждение о пропуске дней
+        /// </summary>
+        public Alert Propusk => new Alert(_driver, _element.FindElement(By.Id("periodDifferenceValidationMessage")));
+        /// <summary>
+        /// Всплывающее предупреждение о пересечении периодов
+        /// </summary>
+        public Alert Peresechenie => new Alert(_driver, _element.FindElement(By.Id("periodValidationMessage")));
+        /// <summary>
+        /// Всплывающее предупреждение, если Дата "С" > Даты "По" в варианте "По дням"
+        /// </summary>
+        public Alert DaysValidByDays => new Alert(_driver, _element.FindElement(By.Id("daysValidationMessage")));
+        /// <summary>
+        /// Всплывающее предупреждение, если Дата "С" > Даты "По" в варианте "Корпоративный"
+        /// </summary>
+        public Alert DaysValidCorp => new Alert(_driver, _element.FindElement(By.Id("corpValidationMessage")));
+        /// <summary>
+        /// Всплывающее предупреждение, если в выбранный период попали праздничные дни
+        /// </summary>
+        public Alert Holidays => new Alert(_driver, _element.FindElement(By.Id("holidaysWarning")));
+        #endregion
+        #region Расчет баланса
+        /// <summary>
+        /// Всплывающее предупреждение, если Дата "С" > Даты "По" в варианте "Корпоративный"
+        /// </summary>
+        public DatePicker BalansByDay => new DatePicker(_driver, _element.FindElement(By.Id("datePickerCreateRequestCalculateBalance")));
+#endregion
+
+        public RequestForm(IWebDriver driver, IWebElement element): base (driver, element )
+        {
+            _driver = driver;
+            _element = driver.FindElement(By.Id("createLeaveRequestWindow"));
+        }
+    }
+}
+
