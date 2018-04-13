@@ -1,0 +1,32 @@
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class BaseObject
+    {
+        protected readonly IWebElement _element;
+
+        public BaseObject(IWebElement element)
+        {
+            _element = element;
+        }
+
+        public string GetAttribute(string attribute, By @by = null)
+        {
+            return @by == null ?
+                _element.GetAttribute(attribute) :
+                _element.FindElement(@by).GetAttribute(attribute);
+        }
+
+        public bool Disabled()
+        {
+            return GetAttribute("class").Contains("disabled");
+        }
+
+        public bool IsValid()
+
+        {
+            return !GetAttribute("class").Contains("input-validation-error");
+        }
+    }
+}
