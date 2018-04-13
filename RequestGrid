@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using OpenQA.Selenium;
+using System.Text;
+using System.Threading.Tasks;
+using VacationAuto_Test.Page.Common.Grid;
+using System.Windows.Forms;
+
+namespace VacationAuto_Test.Page.MyRequest
+{
+    public class RequestsGrid : Grid<RequestsGrid.RequestsRow>
+    {
+        public RequestFind FindRowWith => new RequestFind(Driver, Element);
+        public RequestsGrid(IWebDriver driver, IWebElement element) : base(driver, element)
+        {
+        }
+
+        public class RequestsRow : Row
+        {
+            [Description("Статус заявки")]
+            public Cell RequestStatus => this[0];
+            [Description("Табельный номер")]
+            public Cell TabNumber => this[1];
+            [Description("ФИО сотрудника рус.")]
+            public Cell FullNameEmpRus => this[2];
+            [Description("Дата начала")]
+            public Cell DateFrom => this[3];
+            [Description("Дата окончания")]
+            public Cell DateTo => this[4];
+            [Description("Количество дней")]
+            public Cell QuantityDays => this[5];
+            [Description("ФИО согласующих рус.")]
+            public Cell FullNameAppRus => this[6];
+            [Description("")]
+            public Cell ShowHistory => this[7];
+
+
+            public RequestsRow(IWebDriver driver, IWebElement element) : base(driver, element)
+            {
+            }
+        }
+
+        public class RequestFind
+        {
+            private IWebDriver _driver;
+            private IWebElement _element;
+
+            public RequestFind(IWebDriver driver, IWebElement element)
+            {
+                _driver = driver;
+                _element = element;
+            }
+
+            public RequestsRow Full(string status, string fullName, DateTime dateFrom, DateTime dateTo, int QuantityDays)
+            {
+                string xPath =
+                    $".//tr[./td[3]/text()[normalize-space()='{status}'] and " +
+                    $"./td[5]/text()[normalize-space()='{fullName}'] and " +
+                    $"./td[6]/text()[normalize-space()='{dateFrom.ToShortDateString()}'] and " +
+                    $"./td[7]/text()[normalize-space()='{dateTo.ToShortDateString()}']] and " +
+                    $"./td[5]/text()[normalize-space()='{QuantityDays}']]";
+
+                return new RequestsRow(_driver,
+               _element.FindElement(By.XPath(xPath)));
+
+            }
+
+            public RequestsRow Status(string status) => new RequestsRow(_driver,
+                _element.FindElement(By.XPath($".//td/text()[normalize-space()='{status}']/ancestor::tr")));
+            public RequestsRow FullNameEmpRus(string fullnameemprus) => new RequestsRow(_driver,
+                _element.FindElement(By.XPath($".//td/text()[normalize-space()='{fullnameemprus}']/ancestor::tr")));
+            public RequestsRow DateFrom(DateTime datefrom) => new RequestsRow(_driver,
+                _element.FindElement(By.XPath($".//td/text()[normalize-space()='{datefrom}']/ancestor::tr")));
+            public RequestsRow DateTo(DateTime dateto) => new RequestsRow(_driver,
+                _element.FindElement(By.XPath($".//td/text()[normalize-space()='{dateto}']/ancestor::tr")));
+        }
+    }
+
+
+}
