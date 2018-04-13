@@ -1,0 +1,21 @@
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common
+{
+    public class Button: BaseObject
+    {
+        public string Text => _element.Text;
+        public bool Displayed => _element.Displayed;
+        public IWebElement Element { get; }
+
+
+        public Button(IWebElement element) : base(element)
+        {
+            Element = element;
+        }
+        public void Click()
+        {
+            _element.Click();
+        }
+    }
+}
