@@ -1,0 +1,66 @@
+using System.Linq;
+using OpenQA.Selenium;
+
+namespace VacationAuto_Test.Page.Common.Grid
+{
+    public class Cell
+    {
+        private readonly IWebDriver _driver;
+        private readonly IWebElement _element;
+
+        public string Text => _element.Text;
+
+       
+        public Cell(IWebDriver driver, IWebElement element)
+        {
+            _driver = driver;
+            _element = element;
+        }
+
+        public void Click()
+        {
+            //дороботать клик не по чекбоксу
+            var checkBox = _element.FindElements(By.CssSelector("input[type='checkbox']"));
+
+            if (checkBox.Count == 1)
+            {
+                checkBox[0].Click();
+            }
+        }
+
+        public void Clear()
+        {
+            var textBoxes = _element.FindElements(By.CssSelector("input")).Where(o => o.Displayed);
+
+            foreach (var textBox in textBoxes)
+            {
+                textBox.Clear();
+            }
+        }
+
+        public void SendKeys(string text)
+        {
+            var textBoxes = _element.FindElements(By.CssSelector("input")).Where(o => o.Displayed);
+
+            foreach (var textBox in textBoxes)
+            {
+                textBox.SendKeys(text);
+            }
+        }
+
+        //public DropDown AsDropDown()
+        //{
+        //    return new DropDown(_driver, _element.FindElement(By.CssSelector("[role='listbox']")));
+        //}
+
+        //public DatePicker AsDatePicker()
+        //{
+        //    return new DatePicker(_driver, _element.FindElement(By.CssSelector(".k-datepicker")), false);
+        //}
+
+        //public CheckBox AsCheckBox(string docNumber)
+        //{
+        //    return new CheckBox(_driver, _element.FindElement(By.Id($"SelectDocument_{docNumber}")));
+        //}
+    }
+}
