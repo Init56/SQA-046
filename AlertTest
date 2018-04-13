@@ -1,0 +1,330 @@
+using DriverWrapper;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using System;
+using VacationAuto_Test.Page.Common;
+using System.Threading;
+using UniqueContainerManager;
+using VacationAuto_Test.Page.MyRequest;
+using ExtentReportManager.Attributes;
+using VacationAuto_Test.Helpers;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace VacationAuto_Test.Tests.MyRequest
+{
+    [TestFixture(typeof(AFirefoxDriver))]
+    class AlertTest<TDriver> where TDriver : IWebDriver, new()
+    {
+        protected const string Host = "http://s-msk-t-hr-ws1.raiffeisen.ru/Vacations/VacationsOrders";
+        protected IWebDriver Driver { get; private set; }
+
+
+        public RequestsTable RequestsButtons => new RequestsTable(Driver);
+        public RequestForm ReqForm => new RequestForm(Driver, Driver.FindElement((By.Id("createLeaveRequestWindow"))));
+
+        [OneTimeSetUp]
+        public virtual void OneTimeSetUp()
+        {
+            Thread.Sleep(1000);
+            Driver = new TDriver();
+        }
+
+
+        [SetUp]
+        public virtual void SetUp()
+        {
+
+            var testClass = TestContext.CurrentContext.Test.ClassName;
+            var classType = Type.GetType(testClass);
+
+            Driver.Navigate().GoToUrl(Host);
+
+        }
+
+        [TearDown]
+        public virtual void TearDown()
+        {
+            UniqueContainer.RemoveUniqueEntities();
+        }
+
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            Driver.Quit();
+            Driver.Dispose();
+        }
+        [Test, Title("FT-N - Проверка нотификации, если [Дата По] > [Дата С] для отпуска [Корпоративного] и [По дням]"), Author("V.Kadysev")]
+        public void AllertDaysValidation_ByDay_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var Alert = ReqForm.DaysValidByDays;
+            Thread.Sleep(1000);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(Alert.Text, Is.EqualTo("Поле 'по' должно быть больше или равно поля 'с'"));
+            Assert.That(ReqForm.SaveRequest.Disabled);
+        }
+        [Test, Title("FT-N - Проверка нотификации, если [Дата По] > [Дата С] для отпуска [Корпоративного] и [По дням]"), Author("V.Kadysev")]
+        public void AllertDaysValidation_Corp_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var Alert = ReqForm.DaysValidCorp;
+            Thread.Sleep(1000);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Select(DateTime.Now);
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(Alert.Text, Is.EqualTo("Поле 'по' должно быть больше или равно поля 'с'"));
+            Assert.That(ReqForm.SaveRequest.Disabled);
+        }
+        [Test, Title("FT-N - Проверка нотификации, если [Дата По] > [Дата С] для отпуска [Корпоративного] и [По дням]"), Author("V.Kadysev")]
+        public void AllertDaysValidation_ByDayAndCorp_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var Alert = ReqForm.DaysValidByDays;
+            var Alert2 = ReqForm.DaysValidCorp;
+            Thread.Sleep(1000);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Select(DateTime.Now);
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(Alert.Text, Is.EqualTo("Поле 'по' должно быть больше или равно поля 'с'"));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(Alert2.Text, Is.EqualTo("Поле 'по' должно быть больше или равно поля 'с'"));
+            Assert.That(ReqForm.SaveRequest.Disabled);
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_2WeeksAndOneWeek_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Select(DateTime.Now);
+            ReqForm.DateFromOneWeek.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_2WeeksAndByDays_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_2WeeksAndCorp_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Select(DateTime.Now);
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(3));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_OneWeekAndCorp_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Select(DateTime.Now);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Select(DateTime.Now);
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_OneWeekAndByDays_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Select(DateTime.Now);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-N - Проверка нотификации при пересечении периодов (2 варианта)"), Author("V.Kadysev")]
+        public void AllertPeresechenie_ByDaysAndCorp_Displayed()
+        {
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            var AlertPeresechenie = ReqForm.Peresechenie;
+            Thread.Sleep(1000);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Select(DateTime.Now);
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPeresechenie.DisplayNone, Is.False);
+            Assert.That(AlertPeresechenie.Text, Is.EqualTo("Выбранные периоды пересекаются. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_2WeeksAndOneWeek_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Set(DateTime.Now.AddDays(15));
+            ReqForm.DateFromOneWeek.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromOneWeek.Set(DateTime.Now.AddDays(-9));
+            ReqForm.DateFromOneWeek.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_2WeeksAndByDays_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Set(DateTime.Now.AddDays(15));
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(16));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromByDays.Set(DateTime.Now.AddDays(-5));
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_2WeeksAndCorp_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBTwoWeek.Click();
+            ReqForm.DPDateFrom2Week.Select(DateTime.Now);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(15));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(16));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(-5));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_1WeeksAndByDays_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Select(DateTime.Now);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Set(DateTime.Now.AddDays(15));
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(16));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromByDays.Set(DateTime.Now.AddDays(-5));
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_1WeeksAndCorp_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBOneWeek.Click();
+            ReqForm.DPDateFromOneWeek.Select(DateTime.Now);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(15));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(16));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(-5));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+        [Test, Title("FT-P - Проверка валидации на наличие пропусков дней при создания заявления на отпуск сотрудника"), Author("V.Kadysev")]
+        public void AlertPropusk_ByDaysAndCorp_Displayed()
+        {
+            var AlertPropusk = ReqForm.Propusk;
+            Thread.Sleep(3000);
+            RequestsButtons.CreateRequestButton.Click();
+            Thread.Sleep(1000);
+            ReqForm.CBByDays.Click();
+            ReqForm.DPDateFromByDays.Select(DateTime.Now);
+            ReqForm.DPDateToByDays.Set(DateTime.Now.AddDays(14));
+            ReqForm.DateToByDays.SendKeys(Keys.Enter);
+            ReqForm.CBCorp.Click();
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(16));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(17));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+            ReqForm.DPDateFromCorp.Set(DateTime.Now.AddDays(-5));
+            ReqForm.DPDateToCorp.Set(DateTime.Now.AddDays(-2));
+            ReqForm.DateToCorp.SendKeys(Keys.Enter);
+            Assert.That(AlertPropusk.DisplayNone, Is.False);
+            Assert.That(AlertPropusk.Text, Is.EqualTo("Пропуск дней между периодами не допустим. Измените значения и повторите попытку"));
+        }
+    }
+    }
