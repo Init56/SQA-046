@@ -1,0 +1,14 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace VacationAuto_Test.Core.Common.Texts
+{
+    internal class VacationConstans
+    {
+        public const string STATUS_DRAFT = "Черновик"; 
+        public const string STATUS_ON_APPROVAL = "На согласование";
+    }
+}
