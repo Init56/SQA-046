@@ -1,0 +1,72 @@
+using System.Linq;
+using System.Threading;
+using OpenQA.Selenium;
+
+namespace RBA.ClientSignature.Autotests.Page.Common
+{
+    public class ComboBox : BaseObject
+    {
+        private readonly IWebDriver _driver;
+
+        public string Text => _element
+            .FindElement(By.CssSelector("input[data-role='combobox']"))
+            .GetAttribute("value");
+        public ComboBox(IWebDriver driver, IWebElement element) : base(element)
+        {
+            _driver = driver;
+        }
+
+        public ComboBox Click()
+        {
+            var button = _element.FindElement(By.CssSelector(".k-i-arrow-60-down"));
+
+            button.Click();
+
+            return this;
+        }
+
+        public ComboBox Clear()
+        {
+            Click();
+            _element.FindElement(By.CssSelector("span[div='clear']")).Click();
+            return this;
+        }
+
+        public ComboBox Set(string value)
+        {
+            var input = _element.FindElement(By.CssSelector(".k-input"));
+
+            input.Clear();
+            input.SendKeys(value);
+            
+            Thread.Sleep(500);
+
+            return this;
+        }
+
+        public ComboBox Select(string value)
+        {
+            Click();
+            var ariaOwns = _element.FindElement(By.CssSelector("[role='combobox']")).GetAttribute("aria-owns");
+
+            var item = _driver
+                .FindElement(By.Id(ariaOwns))
+                .FindElements(By.ClassName("k-item"))
+                .FirstOrDefault(x => x.GetAttribute("innerHTML") == value);
+
+            if (item == null)
+            {
+                throw new NotFoundException($"Не найден элемент выпадающего списка {value}");
+            }
+
+            if (!item.Displayed)
+            {
+                Click();
+            }
+
+            item.Click();
+
+            return this;
+        }
+    }
+}
